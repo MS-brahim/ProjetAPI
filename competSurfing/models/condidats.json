@@ -1,9 +1,30 @@
 [
     {
         "ID": 1,
-        "image": "/assets/logo.png",
-        "name": "BRahim",
-        "ville": "Safi",
-        "typeOfSurf": "Surfing"
+        "image": "/assets/img3.png",
+        "name": "Brahim",
+        "ville": "Safi ",
+        "typeOfSurf": "Surf"
+    },
+    {
+        "ID": 2,
+        "image": "/assets/favicon.png",
+        "name": "Bachir",
+        "ville": "Safi (rass lafaa)",
+        "typeOfSurf": "Surf"
+    },
+    {
+        "ID": 3,
+        "image": "/assets/img4.png",
+        "name": "Oussama",
+        "ville": "Elsouira",
+        "typeOfSurf": "Bodyboarding"
+    },
+    {
+        "ID": 4,
+        "image": "/assets/img7.jpg",
+        "name": "Hassan",
+        "ville": "Agadir",
+        "typeOfSurf": "Skimboarding"
     }
 ]

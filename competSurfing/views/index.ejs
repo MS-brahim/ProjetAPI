@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Surfing Compet</title>
+    <title>Surf Compet</title>
     <link rel="icon" href="/assets/favicon.png">
     <script src="https://kit.fontawesome.com/8f45faa16b.js" crossorigin="anonymous"></script>
 
@@ -23,7 +23,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>                        
             </button>
-            <a class="navbar-brand" href="/">SurfingCompet</a>
+            <a class="navbar-brand" href="/">SurfCompet</a>
           </div>
           <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
@@ -38,6 +38,8 @@
         </div>
       </nav>
     <!-- end navbar  -->
+    
+    <!-- start contenu  -->
     <div class="container">
         <div class="gif"">
 
@@ -47,21 +49,23 @@
             <div class="row bg-info">
                     <% planch.forEach(p => { %>
             
-                    <div class="card col-sm-3 mt-2 ">
-                    <img class="card-img-top" src="<%= p.image %>"  style="width:100%">
-                    <div class="card-body">
-                        <h4 class="card-title"><%= p.name %></h4>
-                        <p class="card-text"><%= p.ville %></p>
-                        <p class="card-text" style="font-weight: bold;"><%= p.typeOfSurf %> </p>
-                       
+                    <div class="card col-sm-3 mt-2" style="margin: 25px 0;">
+
                         <a href="/edit/<%= p.ID %>" style="color: white">
-                            <i class="fas fa-edit" style="color: green;font-size: 30px;"></i>
+                            <i class="fas fa-edit" style="color: green;font-size: 20px;"></i>
                         </a>
 
+                        <img src="<%= p.image %>"  style="width:40%; border-radius: 50%;">
+
                         <a href="/delete/<%= p.ID %>" style="color: white" onclick="return confirm('Competitor has been deleted')">
-                            <i class="fas fa-window-close" style="font-size: 30px; color: red;"></i>
-                          </a>
-                    </div>
+                            <i class="fas fa-window-close" style="font-size: 20px; color: red;"></i>
+                        </a>
+
+                        <div class="card-body">
+                            <h4 class="card-title"><%= p.name %></h4>
+                            <p class="card-text"><%= p.ville %></p>
+                            <p class="card-text" style="font-weight: bold;"><%= p.typeOfSurf %> </p>
+                        </div>
                     
                     </div>
                     <% }) %>
@@ -71,7 +75,22 @@
             
         </div>	
     </div>
-
+    <!-- end contenu  -->
+    <!-- footer  -->
+	<footer class="container-fluid">
+		<div class="container">
+			<div class="d-flex justify-content-between bg-secondary mb-3" style="justify-content: space-between; display: flex; flex-wrap: wrap;">
+				<p class="p-2 col"> Copyright 2020 ©, YouCode - All Rights Reserved. </p>
+				<div class="p-2 col">
+					<i class="fa fa-whatsapp" aria-hidden="true"></i>
+					<i class="fa fa-facebook" aria-hidden="true"></i>
+					<i class="fa fa-instagram" aria-hidden="true"></i>
+					<i class="fa fa-youtube" aria-hidden="true"></i>
+					<i class="fa fa-twitter" aria-hidden="true"></i>
+				</div>
+			</div>
+		</div>
+	</footer>
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
