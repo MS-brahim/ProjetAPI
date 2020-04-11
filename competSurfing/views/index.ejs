@@ -38,7 +38,7 @@
         </div>
       </nav>
     <!-- end navbar  -->
-    
+
     <!-- start contenu  -->
     <div class="container">
         <div class="gif"">
@@ -51,14 +51,14 @@
             
                     <div class="card col-sm-3 mt-2" style="margin: 25px 0;">
 
-                        <a href="/edit/<%= p.ID %>" style="color: white">
-                            <i class="fas fa-edit" style="color: green;font-size: 20px;"></i>
+                        <a href="/edit/<%= p.ID %>" class="text-success" style="font-size: 18px;">
+                            <i class="fas fa-edit    "></i>
                         </a>
 
                         <img src="<%= p.image %>"  style="width:40%; border-radius: 50%;">
 
-                        <a href="/delete/<%= p.ID %>" style="color: white" onclick="return confirm('Competitor has been deleted')">
-                            <i class="fas fa-window-close" style="font-size: 20px; color: red;"></i>
+                        <a href="/delete/<%= p.ID %>" class="text-danger" style="font-size: 16px;" onclick="return confirm('Competitor has been deleted')">
+                            <i class="fa fa-window-close" aria-hidden="true"></i>
                         </a>
 
                         <div class="card-body">
