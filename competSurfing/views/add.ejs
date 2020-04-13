@@ -5,13 +5,15 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Surf Compet | Add</title>
+    <title>Surfer Compet | Add</title>
     <link rel="icon" href="/assets/favicon.png">
+    <script src="https://kit.fontawesome.com/8f45faa16b.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="/assets/style.css">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> 
+	<link rel="stylesheet" href="css/bootstrap.min.css"> 
+	<link rel="stylesheet" href="css/bootstrap.min.css.map">
 </head>
 <body>
 		
@@ -24,7 +26,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>                        
             </button>
-            <a class="navbar-brand" href="/">SurfCompet</a>
+            <a class="navbar-brand" href="/">SurFerCompet</a>
           </div>
           <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
@@ -32,13 +34,98 @@
               <li class="active"><a href="/add">New competitor</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-              <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+				<li><a data-toggle="modal" data-target="#signIn">Sign Up</a></li>
+				<li><a data-toggle="modal" data-target="#login"> Login</a></li>
             </ul>
           </div>
         </div>
       </nav>
 	<!-- end navbar  -->
+
+	<!-- start register Modal -->
+    <div class="modal fade" id="signIn" role="dialog"">
+        <div class="modal-dialog">
+        
+            <!-- Modal content-->
+            <div class="modal-content"  style="background-image: url(../assets/img3.png); background-size: cover;">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Create a new account</h4>
+                </div>
+                <div class="modal-body" style="color: orange;">
+                  <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-6" style="margin: 10px 0;">
+                            <label for="inputEmail4">First Name</label>
+                            <input type="name" class="form-control" id="firstName" placeholder="first name">
+                        </div>
+                        <div class="form-group col-md-6" style="margin: 10px 0;">
+                            <label for="inputPassword4">Last Name</label>
+                            <input type="lastName" class="form-control" id="lasName" placeholder="last name">
+                        </div>
+                        <div class="form-group" style="margin: 10px 15px;">
+                            <label for="regEmail">Email</label>
+                            <input type="regEmail" class="form-control" id="regEmail" placeholder="Email">
+                        </div>
+                        <div class="form-group col-md-6" style="margin: 10px 0;">
+                            <label for="regPassword">Password</label>
+                            <input type="password" class="form-control" id="regPassword" placeholder="password">
+                        </div>
+                        <div class="form-group col-md-6" style="margin: 10px 0;">
+                            <label for="password">Repetez Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Password">
+                        </div>
+                        <div class="form-group col-md-6" style="margin: 10px 0;">
+                            <label for="phone">Phone</label>
+                            <input type="phone" class="form-control" id="phone" placeholder="+212 XXX XX XX XX">
+                        </div>
+                        <div class="form-group col-md-6" style="margin: 10px 0;">
+                            <label for="city">City</label>
+                            <input type="text" class="form-control" id="city" placeholder="City">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-warning" style="margin-left: 16px;">Register</button>
+                  </form>
+                </div>
+            </div>
+          
+        </div>
+    </div>
+    <!-- end register modal  -->
+
+     <!-- Start login  Modal -->
+     <div class="modal fade" id="login" role="dialog"">
+        <div class="modal-dialog">
+        
+            <!-- Modal content-->
+            <div class="modal-content"  style="background-image: url(../assets/logimg.jpeg); background-size: cover;width: 60%; margin: auto;">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Login to your account</h4>
+                </div>
+                <div class="modal-body" style="color: orange;">
+                  <form>
+                    <div class="form-row">
+                        <div class="form-group" style="margin: 10px 15px;">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Email">
+                        </div>
+                        <div class="form-group" style="margin: 10px 15px;">
+                            <label for="password">Email</label>
+                            <input type="password" class="form-control" id="logPassword" placeholder="***********">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-warning" style="margin-left: 16px;">Register</button>
+                  </form>
+                </div>
+            </div>
+          
+        </div>
+    </div>
+    <!-- end login modal  -->
+
 	<!-- start contenu  -->
 	<div class="container">
 		<h1 class="text-center">Add new competitor</h1>
@@ -47,22 +134,42 @@
 
 				<div class="form-group">
 					<label for="name">Image </label>
-					<input type="file" class="form-control input-lg" id="image" name="image"placeholder="Upload your photo"/>
+					<input 
+					type="file" 
+					class="form-control input-lg" 
+					id="image" 
+					name="image"
+					placeholder="Upload your photo"/>
 				</div>
 	
 				<div class="form-group">
 					<label for="name">Name</label>
-					<input type="text"class="form-control input-lg"id="name"name="name" placeholder="Your name"/>
+					<input 
+					type="text"
+					class="form-control input-lg"
+					id="name"
+					name="name"
+					placeholder="Your name"/>
 				</div>
 				
 				<div class="form-group">
 					<label for="ville">City</label>
-					<input type="text" class="form-control input-lg" id="ville" name="ville" placeholder="Your city"/>
+					<input 
+					type="text" 
+					class="form-control input-lg"
+					 id="ville" 
+					 name="ville"
+					  placeholder="Your city"/>
 				</div>
 				
 				<div class="form-group">
 					<label for="desc">Type of Surfing</label>
-					<input type="text"class="form-control input-lg" id="typeOfSurf"name="typeOfSurf" placeholder="Add Your Type of Surfing"/>
+					<input 
+					type="text"
+					class="form-control input-lg" 
+					id="typeOfSurf"
+					name="typeOfSurf"
+					placeholder="Add Your Type of Surfing"/>
 				</div>
 				
 				<button type="submit" class="btn btn-info  mt-5">Add</button>
@@ -87,9 +194,9 @@
 		</div>
 	</footer>
 	
-	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<script src="js/jquery-3.4.1.slim.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 
 </body>
 </html>
