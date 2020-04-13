@@ -8,6 +8,7 @@
     },
     {
         "ID": 2,
+        "image": "/assets/img4.png",
         "name": "Bachir",
         "ville": "Safi (rass lafaa)",
         "typeOfSurf": "Surf"
