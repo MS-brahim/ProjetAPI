@@ -8,7 +8,7 @@ const app = express();
 const jsonFile = fs.readFileSync('./models/condidats.json');
 let planch = JSON.parse(jsonFile); 
 
-app.set('views', './views'); 
+
 app.set('view engine', 'ejs'); 
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -33,7 +33,7 @@ app.post('/add', (req, res) => {
 	const { image, name,ville,typeOfSurf} = req.body;
  
 	planch.push({ ID: planch.length+1, image: image, name:name,ville:ville,typeOfSurf:typeOfSurf });
-	fs.writeFileSync('./models/condidats.json', JSON.stringify(planch, null, 4));
+	fs.writeFileSync('./models/condidats.json', JSON.stringify(planch, null));
 	res.redirect('/'); 
 });
 
@@ -68,7 +68,7 @@ app.post('/edit/:id', (req, res) => {
 	planch[planchId].typeOfSurf = typeOfSurf;
 	 
 
-	fs.writeFileSync('./models/condidats.json', JSON.stringify(planch, null, 4));
+	fs.writeFileSync('./models/condidats.json', JSON.stringify(planch, null));
 	res.redirect('/');  
 });
 
@@ -83,7 +83,7 @@ app.get('/delete/:id', (req, res) => {
 	}
 
 	planch = xData;
-	fs.writeFileSync('./models/condidats.json', JSON.stringify(planch, null, 4));
+	fs.writeFileSync('./models/condidats.json', JSON.stringify(planch, null));
 	res.redirect('/');
 });
 
