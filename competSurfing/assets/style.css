@@ -31,3 +31,7 @@ footer{
     margin: 0 5px;
     font-size: 20px;
 }
+
+#image{
+    cursor: pointer;
+}
