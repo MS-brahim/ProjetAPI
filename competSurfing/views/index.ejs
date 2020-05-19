@@ -52,6 +52,7 @@
                     <% planch.forEach(p => { %>
             
                     <div class="card col-sm-3 mt-2"  style="margin: 25px 0;">
+                        <div class="content-col-cnt">
 
                         <a href="/edit/<%= p.ID %>" class="text-success" style="font-size: 18px;">
                             <i class="fas fa-edit    "></i>
@@ -70,7 +71,7 @@
                             <hr>
                             <p class="card-text" style="font-weight: bold;">Game : <span class="text-primary"><%= p.typeOfSurf %></span></p>
                         </div>
-                    
+                        </div>
                     </div>
                     <% }) %>
                     

@@ -35,3 +35,17 @@ footer{
 #image{
     cursor: pointer;
 }
+
+/* homepage  */
+.content-col-cnt{
+    width: 90%;
+    margin: auto;
+    background-color: aliceblue;
+    padding: 10px 0;
+    box-shadow: 1px 1px 4px gray;
+
+}
+.content-col-cnt:hover{
+    box-shadow: 3px 2px 8px gray;
+    transition: all 0.3s ease;
+}
