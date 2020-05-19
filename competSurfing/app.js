@@ -1,30 +1,32 @@
+// load up the express framework and body-parser helper
 const express = require('express');
-const fs = require('fs');
 const bodyParser = require('body-parser')
 
+// we'll load up node's built in file system helper library here
+const fs = require('fs');
+
+// create an instance of express to serve our end points
 const app = express();
 
 
-const jsonFile = fs.readFileSync('./models/condidats.json');
+const jsonFile = fs.readFileSync('./data/condidats.json');
 let planch = JSON.parse(jsonFile); 
 
 
 app.set('view engine', 'ejs'); 
 
+// configure our express instance with some body-parser settings
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/views'));
 app.use(express.static(__dirname + '/assets'));
 app.use(express.static(__dirname + '/'));
+
 app.get('/', (req, res) => {
-	let filterData = [];  
-
-
 
 	res.render('index', { planch: planch });
 });
 
 
-// add condidat
 app.get('/add', (req, res) => {
 	res.render('add');
 });  
@@ -33,10 +35,9 @@ app.post('/add', (req, res) => {
 	const { image, name,ville,typeOfSurf} = req.body;
  
 	planch.push({ ID: planch.length+1, image: image, name:name,ville:ville,typeOfSurf:typeOfSurf });
-	fs.writeFileSync('./models/condidats.json', JSON.stringify(planch, null));
+	fs.writeFileSync('./data/condidats.json', JSON.stringify(planch, null));
 	res.redirect('/'); 
 });
-
 
 app.get('/edit/:id', (req, res) => {
 	const { id } = req.params;
@@ -68,7 +69,7 @@ app.post('/edit/:id', (req, res) => {
 	planch[planchId].typeOfSurf = typeOfSurf;
 	 
 
-	fs.writeFileSync('./models/condidats.json', JSON.stringify(planch, null));
+	fs.writeFileSync('./data/condidats.json', JSON.stringify(planch, null));
 	res.redirect('/');  
 });
 
@@ -83,12 +84,11 @@ app.get('/delete/:id', (req, res) => {
 	}
 
 	planch = xData;
-	fs.writeFileSync('./models/condidats.json', JSON.stringify(planch, null));
+	fs.writeFileSync('./data/condidats.json', JSON.stringify(planch, null));
 	res.redirect('/');
 });
 
-
-app.listen(2999,(err)=>{
-    console.log(err);
-    console.log('server listen on port 2999');
+//launch server on port 3001
+app.listen(3001,(err)=>{
+    console.log('server listen on port 3001');
 })
