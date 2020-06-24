@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Home</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- font awsome -->
+    <script src="https://kit.fontawesome.com/8f45faa16b.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../public/assets/css/bootstrap.min.css">
+  </head>
+  <body>
+    <!-- start navbar  -->
+    <nav class="navbar navbar-expand-sm navbar-dark" style="background-color:black;">
+        <div class="container">
+            <a class="navbar-brand text-uppercase" href="/"><dt>Competitor</dt> </a>
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                aria-expanded="false" aria-label="Toggle navigation"></button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- end navbar  -->
+
+    <div class="container mt-5">
+        <h1 class="text-center">Lists Competions</h1>
+        <!-- Button trigger modal -->
+        <a type="button" class="text-primary" data-toggle="modal" data-target="#exampleModal">
+            Add New competitor <b>+</b>
+        </a>
+        <div class="row ">
+            <% users.forEach(p => { %>
+            <div class="col-sm-3 d-flex justify-content-between">
+                <div class="card mt-3" style="width: 18rem;">
+                    <div class="card-body text-center">
+                        <div class="row">
+                            <div class="col-1 p-0">
+                                <a href="/edit/<%= p.ID %>" class="text-success" style="font-size: 18px; ">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                            </div>
+                            <div class="col">
+                                <img src="/public/<%= p.image %>" style="width:100%; min-width: 60px;  height: 100px;">
+                            </div>
+                            <div class="col-1 p-0">
+                                <a href="/delete/<%= p.ID %>" class="text-danger" style="font-size: 16px;" onclick="return confirm('Competitor has been deleted')">
+                                    <i class="fa fa-window-close" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="text-left">
+                            <h5 class="card-title mt-3">Name : <span class="text-primary"><%= p.name %></span></h5>
+                            <hr>
+                            <h5 class="card-text">City : <span class="text-primary"><%= p.ville %></span></h5>
+                            <hr>
+                            <p class="card-text" style="font-weight: bold;">Game : <span class="text-primary"><%= p.typeOfSurf %></span></p>
+                            <%= p.bb %>
+                        </div>           
+                    </div>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add New competitor</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <form  action="/add" method="POST">
+                    <div class="modal-body">  
+                        
+                        <div class="form-group">
+                            <label for="name">Image </label>
+                            <input 
+                            type="file" 
+                            class="form-control input-lg" 
+                            id="image" 
+                            name="image"
+                            accept="image/*"
+                            placeholder="Upload your photo"/>
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input 
+                            type="text"
+                            class="form-control input-lg"
+                            id="name"
+                            name="name"
+                            placeholder="Your name"/>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="ville">City</label>
+                            <input 
+                            type="text" 
+                            class="form-control input-lg"
+                            id="ville" 
+                            name="ville"
+                            placeholder="Your city"/>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="desc">Type of Surfing</label>
+                            <input 
+                            type="text"
+                            class="form-control input-lg" 
+                            id="typeOfSurf"
+                            name="typeOfSurf"
+                            placeholder="Add Your Type of Surfing"/>
+                        </div>
+                            
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary w-25">add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- footer  -->
+	<footer class="mt-5 p-5 text-white" style="margin-bottom: -40px; background-color: black;">
+		<div class="">
+			<div class=" mb-3 text-center">
+				<div class="p-2 col d-flex justify-content-around w-25 m-auto ">
+					<i class="fa fa-whatsapp m-3" aria-hidden="true"></i>
+					<i class="fa fa-facebook m-3" aria-hidden="true"></i>
+					<i class="fa fa-instagram m-3" aria-hidden="true"></i>
+					<i class="fa fa-youtube m-3" aria-hidden="true"></i>
+					<i class="fa fa-twitter m-3" aria-hidden="true"></i>
+                </div>
+                <p class="p-2 col"> Copyright 2020 ©, YouCode - All Rights Reserved. </p>
+			</div>
+		</div>
+	</footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="/public/assets/js/jquery-3.3.1.slim.min.js" ></script>
+    <script src="/public/assets/js/popper.min.js"></script>
+    <script src="/public/assets/js/bootstrap.min.js"></script>
+  </body>
+</html>

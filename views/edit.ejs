@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Edit</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- font awsome -->
+    <script src="https://kit.fontawesome.com/8f45faa16b.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/public/assets/css/bootstrap.min.css">
+  </head>
+  <body>
+    <!-- start navbar  -->
+    <nav class="navbar navbar-expand-sm navbar-dark" style="background-color:black;">
+      <div class="container">
+          <a class="navbar-brand text-uppercase" href="/"><dt>Competitor</dt> </a>
+          <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+              aria-expanded="false" aria-label="Toggle navigation"></button>
+          <div class="collapse navbar-collapse" id="collapsibleNavId">
+              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                  <li class="nav-item active">
+                      <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+  <!-- end navbar  -->
+  <!-- start content -->
+	<div class="container mt-5 mb-5">
+      <h1 class="text-center m-5" >Modify competitor information </h1>
+      <div class="row">
+          <form class="col-sm-6 m-auto" action="/edit/<%= users.ID %>" method="POST">
+              <div class="form-group">
+                <label for="image">Image</label>
+                <input type="file" class="form-control" id="image" placeholder="Upload your photo" name="image" value="<%= users.image %>"/>
+              </div>
+        
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" placeholder="Your name" id="name" name="name" value="<%= users.name %>"/>
+              </div>
+              
+              <div class="form-group">
+                <label for="ville">city</label>
+                <input type="text" class="form-control" id="ville" name="ville" value="<%= users.ville %>" placeholder="Your city"/>
+              </div>
+              
+              <div class="form-group">
+                <label for="typeOfSurf">Type of Surfing</label>
+                <input type="text" class="form-control" id="typeOfSurf" name="typeOfSurf" placeholder="Add Your Type of Surfing" value="<%= users.typeOfSurf %>"/>
+              </div>
+            
+              <button type="submit" class="btn btn-primary">Edit competitor</button>
+          </form>
+      </div>
+	</div>
+  <!-- end content -->
+  
+  <!-- footer  -->
+	<footer class="mt-5 p-5 text-white" style="margin-bottom: -40px; background-color: black;">
+		<div class="">
+			<div class=" mb-3 text-center">
+				<div class="p-2 col d-flex justify-content-around w-25 m-auto ">
+					<i class="fa fa-whatsapp m-3" aria-hidden="true"></i>
+					<i class="fa fa-facebook m-3" aria-hidden="true"></i>
+					<i class="fa fa-instagram m-3" aria-hidden="true"></i>
+					<i class="fa fa-youtube m-3" aria-hidden="true"></i>
+					<i class="fa fa-twitter m-3" aria-hidden="true"></i>
+        </div>
+          <p class="p-2 col"> Copyright 2020 ©, YouCode - All Rights Reserved. </p>
+			</div>
+		</div>
+	</footer>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="/public/assets/js/jquery-3.3.1.slim.min.js" ></script>
+    <script src="/public/assets/js/popper.min.js"></script>
+    <script src="/public/assets/js/bootstrap.min.js"></script>
+  </body>
+</html>
